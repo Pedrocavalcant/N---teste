@@ -7,6 +7,14 @@
     <title>N1 - INVITE</title>
 </head>
 <body>
-    <video src="midia/teste.mp4" controls autoplay muted playsinline></video>
+    <video id="meuVideo" src="midia/teste.mp4" controls muted></video>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    let video = document.getElementById("meuVideo");
+    video.play().catch(error => console.log("Autoplay bloqueado:", error));
+});
+
+    </script>
 </body>
 </html>
