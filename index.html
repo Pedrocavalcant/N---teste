@@ -7,20 +7,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <video id="meuVideo" src="midia/teste.mp4" controls autoplay muted playsinline></video>
+    <video id="meuVideo" src="midia/teste.mp4" controls autoplay playsinline></video>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             let video = document.getElementById("meuVideo");
 
-            // Tenta iniciar o vídeo automaticamente
+            // Tenta iniciar o vídeo
+            video.muted = true;
             video.play().then(() => {
-                // Se der certo, ativa o áudio após uma leve interação
-                document.addEventListener("click", function() {
+                // Após 1 segundo, ativa o áudio
+                setTimeout(() => {
                     video.muted = false;
-                }, { once: true }); // Executa apenas uma vez
+                }, 1000);
             }).catch(error => {
-                console.log("Autoplay bloqueado pelo navegador:", error);
+                console.log("Autoplay bloqueado:", error);
             });
         });
     </script>
