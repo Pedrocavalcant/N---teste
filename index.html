@@ -14,17 +14,12 @@
             max-width: 800px;
             margin: auto;
             display: none; /* Oculto inicialmente */
+            margin: auto;
+            align-items: center;
+            justify-content: center;
+            left: 2%;
         }
 
-        /* Poster ocupa a tela toda */
-        .poster {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
 
         /* Estilização do vídeo */
         video {
@@ -87,9 +82,6 @@
     <button id="startButton" class="start-button"><div class="center-button"></div></button>
 
     <div class="video-container" id="videoContainer">
-        <!-- Imagem do poster -->
-        <img id="posterImg" src="midia/Design.jpg" alt="Prévia do vídeo" class="poster">
-
         <!-- Vídeo -->
         <video id="meuVideo" src="midia/N1_LANCAMENTO .mp4" controls playsinline loop></video>
     </div>
