@@ -39,29 +39,44 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background-color: black;
-            color: white;
-            border: 2px solid white;
+            background-color: white;
+            color: black;
+            border: 2px solid black;
             padding: 15px 30px;
             font-size: 18px;
             font-weight: bold; /* Negrito */
             text-transform: uppercase; /* CAPS LOCK */
-            border-radius: 5px;
+            border-radius: 50%;
             cursor: pointer;
             z-index: 10;
             transition: all 0.3s ease-in-out;
+            width: 150px;
+            height: 150px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        /* Mudança de cor ao passar o mouse */
-        .start-button:hover {
-            background-color: white;
-            color: black;
+        /*div no meio do botao*/
+           .center-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(90deg); /* Centraliza e inclina */
+            width: 0;
+            height: 0;
+            border-left: 45px solid transparent;
+            border-right: 45px solid transparent;
+            border-bottom: 65px solid black; /* Cor do triângulo */
         }
+
 
         /* Mudança ao clicar */
         .start-button:active {
             background-color: white;
             color: black;
+            border: 2px solid white;
             transform: translate(-50%, -50%) scale(0.95);
         }
     </style>
@@ -69,14 +84,14 @@
 <body>
 
     <!-- Botão de início -->
-    <button id="startButton" class="start-button">N1 - INAUGURAÇÃO</button>
+    <button id="startButton" class="start-button"><div class="center-button"></div></button>
 
     <div class="video-container" id="videoContainer">
         <!-- Imagem do poster -->
         <img id="posterImg" src="midia/Design.jpg" alt="Prévia do vídeo" class="poster">
 
         <!-- Vídeo -->
-        <video id="meuVideo" src="midia/teste.mp4" controls playsinline></video>
+        <video id="meuVideo" src="midia/N1_LANCAMENTO .mp4" controls playsinline loop></video>
     </div>
 
     <script>
