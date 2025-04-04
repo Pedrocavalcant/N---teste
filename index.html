@@ -1,78 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="midia/favicon-32x32.png">
     <title>N1 - INVITE</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css" media="screen and (max-width:580px)">
+    
 
     <link href="https://fonts.cdnfonts.com/css/balgin" rel="stylesheet">
 
-    <style>
-        /* Centralizar o vídeo */
-        .video-container {
-            position: fixed;
-            width: 100%;
-            max-width: 800px;
-            margin: auto;
-            display: none; /* Oculto inicialmente */
-            margin: auto;
-            align-items: center;
-            justify-content: center;
-            left: 5%;
-        }
-
-
-        /* Estilização do vídeo */
-        video {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Botão personalizado */
-        .start-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: black;
-            border: 7px solid white;
-            border-radius: 50%;
-            cursor: pointer;
-            width: 100px;
-            height: 100px;
-        }
-
-        /*div no meio do botao*/
-           .center-button {
-            position: absolute;
-            top: 50%;
-            left: 55%;
-            transform: translate(-50%, -50%) rotate(90deg); /* Centraliza e inclina */
-            width: 40px;
-            height: 40px;
-            background-color: white;
-            clip-path: polygon(50% 5%, 95% 95%, 5% 95%); /* Cor do triângulo */
-            border-radius: 10px;
-        }
-
-
-        /* Mudança ao clicar */
-        .start-button:active {
-            transform: translate(-50%, -50%) scale(0.95);
-        }
-
-        .button-text{
-            color: white;
-            position: absolute;
-            left: 34%;
-            font-size: 20px;
-            font-family: 'Balgin', sans-serif;
-            margin-bottom: 200px;
-        }
-    </style>
 </head>
 <body>
 
@@ -102,6 +40,17 @@
                 startButton.style.display = "none"; // Esconde o botão
             });
 
+            // Quando o vídeo começa, some o poster
+            video.addEventListener("play", function () {
+                poster.style.display = "none";
+            });
+
+            // Quando o vídeo termina, exibe o poster novamente
+            video.addEventListener("ended", function () {
+                poster.style.display = "block"; // Mostra o poster
+                video.style.display = "none"; // Oculta o vídeo
+                startButton.style.display = "block"; // Exibe o botão novamente
+            });
         });
     </script>
 
