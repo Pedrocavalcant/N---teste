@@ -39,20 +39,10 @@
             transform: translate(-50%, -50%);
             background-color: black;
             border: 7px solid white;
-            padding: 15px 30px;
-            font-size: 18px;
-            font-weight: bold; /* Negrito */
-            text-transform: uppercase; /* CAPS LOCK */
             border-radius: 50%;
             cursor: pointer;
-            z-index: 10;
-            transition: all 0.3s ease-in-out;
             width: 100px;
             height: 100px;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         /*div no meio do botao*/
@@ -61,8 +51,6 @@
             top: 50%;
             left: 55%;
             transform: translate(-50%, -50%) rotate(90deg); /* Centraliza e inclina */
-            width: 0;
-            height: 0;
             width: 50px;
             height: 50px;
             background-color: white;
@@ -73,13 +61,10 @@
 
         /* Mudança ao clicar */
         .start-button:active {
-            background-color: white;
-            color: black;
-            border: 2px solid white;
             transform: translate(-50%, -50%) scale(0.95);
         }
 
-        .TESTE{
+        .button-text{
             color: white;
             position: absolute;
             left: 34%;
@@ -91,7 +76,7 @@
 </head>
 <body>
 
-    <div class="TESTE">CLIQUE AQUI</div>
+    <div class="button-text">CLIQUE AQUI</div>
     <!-- Botão de início -->
     <button id="startButton" class="start-button"><div class="center-button"></div></button>
 
@@ -117,17 +102,6 @@
                 startButton.style.display = "none"; // Esconde o botão
             });
 
-            // Quando o vídeo começa, some o poster
-            video.addEventListener("play", function () {
-                poster.style.display = "none";
-            });
-
-            // Quando o vídeo termina, exibe o poster novamente
-            video.addEventListener("ended", function () {
-                poster.style.display = "block"; // Mostra o poster
-                video.style.display = "none"; // Oculta o vídeo
-                startButton.style.display = "block"; // Exibe o botão novamente
-            });
         });
     </script>
 
